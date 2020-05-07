@@ -1,0 +1,39 @@
+import java.io.Serializable;
+public final class VideoGame implements Comparable<VideoGame>, Serializable {
+    private final String title;
+    private final String creator;
+    private final int price;
+    private final Rating rating;
+    private final int sales;
+    
+    public VideoGame(String title, String creator, int price, Rating rating, int sales) {
+     this.title = title;
+     this.creator = creator;
+     this.price = price;
+     this.rating = rating;
+     this.sales = sales;
+    }
+    public String getTitle() {
+     return title;   
+    }
+    public String getCreator() {
+     return creator;   
+    }
+    public int getPrice() {
+     return price;   
+    }
+    public Rating getRating() {
+     return rating;   
+    }
+    public int getSales() {
+     return sales;   
+    }
+    @Override
+    public int compareTo(VideoGame other) {
+     return price - other.getPrice();   
+    }
+    @Override
+    public String toString() {
+     return String.format("$%d - %s (by %s) [Rated %s] Sales: %d%n", price, title, creator, rating, sales);   
+    }
+}
