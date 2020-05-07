@@ -1,0 +1,8 @@
+public enum Rating {
+    E,
+    E10,
+    T,
+    M,
+    A,
+    RP
+}
